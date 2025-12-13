@@ -353,6 +353,24 @@
                 transform: rotate(360deg);
             }
         }
+/* ✅ Enable scrolling for letter text on mobile */
+.content__letter .right {
+    overflow-y: auto;
+}
+
+/* Smooth scrolling */
+.content__letter .right::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content__letter .right::-webkit-scrollbar-thumb {
+    background: #ff9aa9;
+    border-radius: 10px;
+}
+
+.content__letter .right::-webkit-scrollbar-track {
+    background: transparent;
+}
 
         .text__cricle span {
             top: 0%;
@@ -864,6 +882,26 @@
             .gift-lid { width: 198px; height: 46px; top: -26px; transform-origin: 18% 100%; }
             .left .photos img { width: 62%; height: 120px; }
         }
+@media (max-width: 640px) {
+    .letter__border {
+        height: 85vh;   /* more height on phone */
+    }
+
+    .content__letter {
+        flex-direction: column; /* stack vertically */
+    }
+
+    .content__letter .left {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .content__letter .right {
+        width: 100%;
+        max-height: 45vh; /* 👈 THIS enables scrolling */
+        overflow-y: auto;
+    }
+}
 
         /* responsive tweaks keep it centered on phones */
         @media (max-width: 640px) {
@@ -1395,3 +1433,4 @@ I hope this year brings you all the love, peace, happiness, and magic you deserv
 </body>
 
 </html>
+
